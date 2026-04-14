@@ -1,0 +1,309 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #eef3fa;
+  font-family: 'Inter', sans-serif;
+  color: #1f2f3e;
+  line-height: 1.5;
+  padding: 2rem 1rem;
+}
+
+.page-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 2rem;
+  box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* HEADER */
+.academic-header {
+  background: linear-gradient(135deg, #0a2f3f 0%, #124c5e 100%);
+  color: white;
+  padding: 2rem 2rem 1.5rem 2rem;
+}
+
+.university h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  border-left: 4px solid #f5b042;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.university p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-left: 1rem;
+}
+
+.career {
+  font-weight: 500;
+  margin-top: 0.2rem;
+}
+
+.course-info {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.course-info h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: 'Merriweather', serif;
+  margin-bottom: 0.8rem;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.85rem;
+}
+
+.details i {
+  margin-right: 0.4rem;
+  color: #f5b042;
+}
+
+/* DESCRIPTION */
+.description {
+  background: #f9fcfd;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e2edf2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.description p {
+  flex: 2;
+  font-size: 0.95rem;
+  color: #2c4c6c;
+}
+
+.description p i {
+  color: #1e7e6c;
+  margin-right: 0.5rem;
+}
+
+.hours-badge {
+  background: #eef2f7;
+  padding: 0.5rem 1rem;
+  border-radius: 60px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0b5e6b;
+}
+
+/* TÍTULO SECCIÓN */
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 1.8rem 2rem 1.2rem 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #f0bc6e;
+  display: inline-block;
+  color: #1a4b5e;
+}
+
+.section-title i {
+  margin-right: 0.6rem;
+  color: #e68a2e;
+}
+
+/* GRID DE UNIDADES */
+.units-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.8rem;
+  padding: 0 2rem 2rem 2rem;
+}
+
+.unit-card {
+  background: #ffffff;
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+  border: 1px solid #e4edf2;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.unit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -12px rgba(0,0,0,0.1);
+  border-color: #cde0e8;
+}
+
+.unit-header {
+  background: #f8fafc;
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid #e9f0f5;
+}
+
+.unit-header h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #e68a2e;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.unit-header h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a4b5e;
+  line-height: 1.3;
+}
+
+.learning-result {
+  background: #fef9e6;
+  padding: 0.8rem 1.2rem;
+  font-size: 0.8rem;
+  color: #7a6300;
+  border-left: 3px solid #f0bc6e;
+  margin: 1rem 1.2rem 0.8rem 1.2rem;
+  border-radius: 0.8rem;
+}
+
+.learning-result i {
+  margin-right: 0.5rem;
+  color: #e68a2e;
+}
+
+.topics-list {
+  padding: 0.2rem 1.2rem 1.2rem 1.2rem;
+  flex: 1;
+}
+
+.topics-title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin: 0.8rem 0 0.5rem 0;
+  color: #2c6e6e;
+}
+
+.topics-title i {
+  margin-right: 0.4rem;
+}
+
+.topics-list ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.topics-list li {
+  padding: 0.4rem 0 0.4rem 1.5rem;
+  position: relative;
+  font-size: 0.9rem;
+  border-bottom: 1px dashed #ecf3f8;
+}
+
+.topics-list li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #f0bc6e;
+  font-size: 0.8rem;
+}
+
+/* INFO ADICIONAL */
+.extra-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  background: #f3f8fb;
+  margin: 1rem 2rem 2rem 2rem;
+  border-radius: 1.2rem;
+  padding: 1.5rem;
+}
+
+.soft-skills, .methodology {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+  border: 1px solid #e2eef5;
+}
+
+.soft-skills h3, .methodology h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #1f5e6e;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skills-list span {
+  background: #eef3fc;
+  padding: 0.3rem 0.9rem;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #2c6e6e;
+}
+
+.methodology p {
+  font-size: 0.85rem;
+  color: #2c5a6e;
+}
+
+/* FOOTER */
+.footer {
+  background: #10262e;
+  color: #bbd4e2;
+  text-align: center;
+  padding: 1.2rem;
+  font-size: 0.75rem;
+  margin-top: 1rem;
+}
+
+.footer i {
+  color: #f0bc6e;
+  margin-right: 0.3rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 780px) {
+  .extra-info {
+    grid-template-columns: 1fr;
+    margin: 1rem 1rem 1.5rem 1rem;
+  }
+  .units-grid {
+    padding: 0 1rem 1.5rem 1rem;
+  }
+  .section-title {
+    margin-left: 1rem;
+    font-size: 1.3rem;
+  }
+  .academic-header {
+    padding: 1.2rem;
+  }
+  .course-info h2 {
+    font-size: 1.4rem;
+  }
+  .description {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
