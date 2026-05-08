@@ -3,12 +3,342 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Portafolio digital de David Burga - Proyectos de Investigación, UCE. Evidencias, taxonomías y recursos académicos.">
   <title>Portafolio Digital | David Burga | UCE</title>
   <!-- Google Fonts & Font Awesome 6 -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- CSS externo -->
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #eef2f5;
+      font-family: 'Inter', sans-serif;
+      color: #1a2c3e;
+      line-height: 1.5;
+    }
+
+    .blog-wrapper {
+      max-width: 1400px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    /* HEADER INSTITUCIONAL */
+    .main-header {
+      background: linear-gradient(135deg, #0a2f3f 0%, #144d5c 100%);
+      border-radius: 2rem;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 15px 30px -12px rgba(0,0,0,0.2);
+      color: white;
+    }
+
+    .uni-badge {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-bottom: 1.2rem;
+    }
+
+    .uni-title h1 {
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    .uni-title p {
+      font-size: 0.85rem;
+      opacity: 0.85;
+      margin-top: 0.3rem;
+    }
+
+    .portafolio-tag {
+      background: rgba(255,215,150,0.2);
+      backdrop-filter: blur(4px);
+      padding: 0.6rem 1.2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      background: rgba(255,255,255,0.12);
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links a:hover {
+      background: #ffb347;
+      color: #0a2f3f;
+      transform: translateY(-2px);
+    }
+
+    /* GRID PRINCIPAL */
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 2rem;
+    }
+
+    /* POST CARD */
+    .post-card {
+      background: white;
+      border-radius: 1.8rem;
+      padding: 2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      transition: 0.2s;
+    }
+
+    .post-meta {
+      margin-bottom: 1rem;
+    }
+
+    .post-date {
+      font-size: 0.85rem;
+      color: #5f7f9e;
+      background: #eef3fc;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      display: inline-block;
+    }
+
+    .post-title {
+      font-size: 1.9rem;
+      font-weight: 700;
+      font-family: 'Merriweather', serif;
+      margin-bottom: 1.5rem;
+      color: #0f3b4c;
+      line-height: 1.2;
+    }
+
+    .info-academica {
+      background: #f8fafd;
+      border-radius: 1.5rem;
+      padding: 1.2rem;
+      margin: 1.2rem 0;
+      border: 1px solid #e2edf2;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+
+    .info-item strong {
+      color: #1e7e6c;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: block;
+    }
+
+    .info-item p {
+      font-weight: 600;
+      margin-top: 4px;
+      font-size: 0.9rem;
+    }
+
+    .description-text {
+      margin: 1.5rem 0;
+      font-size: 1rem;
+      color: #2c475b;
+      line-height: 1.6;
+    }
+
+    .description-text i {
+      margin-right: 6px;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .widget {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.3rem 1.2rem;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.03);
+      border: 1px solid #e9f0f4;
+    }
+
+    .widget h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #1f5e6e;
+      border-left: 4px solid #ffb347;
+      padding-left: 10px;
+    }
+
+    .search-box {
+      display: flex;
+      gap: 8px;
+    }
+
+    .search-box input {
+      flex: 1;
+      padding: 0.7rem;
+      border: 1px solid #cfdfe8;
+      border-radius: 60px;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: 0.2s;
+    }
+
+    .search-box input:focus {
+      border-color: #1e7e6c;
+    }
+
+    .search-box button {
+      background: #1e7e6c;
+      border: none;
+      color: white;
+      width: 42px;
+      border-radius: 60px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .search-box button:hover {
+      background: #0f5e50;
+    }
+
+    .contenidos-list, .taxo-list, .archive-list {
+      list-style: none;
+    }
+
+    .contenidos-list li, .taxo-list li, .archive-list li {
+      margin-bottom: 0.8rem;
+    }
+
+    .contenidos-list a, .taxo-list a, .archive-list a {
+      text-decoration: none;
+      color: #2c6e9e;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      transition: 0.2s;
+    }
+
+    .contenidos-list a:hover, .taxo-list a:hover {
+      color: #ff8c42;
+      transform: translateX(4px);
+    }
+
+    .profile-card {
+      text-align: center;
+      background: #fefaf5;
+    }
+    .avatar {
+      background: #d9e6f2;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      color: #1e7e6c;
+    }
+    .profile-card h4 {
+      font-size: 1.2rem;
+    }
+    .profile-links {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .profile-links a {
+      font-size: 0.75rem;
+      text-decoration: none;
+      background: #eef2f5;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      color: #2c6e9e;
+    }
+    .subscribe-link {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: #1e7e6c;
+      text-decoration: none;
+    }
+
+    .footer-blog {
+      margin-top: 2.5rem;
+      background: #0f2c36;
+      color: #cbdbe2;
+      text-align: center;
+      padding: 1.8rem;
+      border-radius: 2rem;
+      font-size: 0.75rem;
+    }
+    .footer-blog a {
+      color: #ffc285;
+      text-decoration: none;
+    }
+    .footer-blog a:hover {
+      text-decoration: underline;
+    }
+
+    /* Etiquetas y pequeños detalles */
+    .description-text a, .post-card a {
+      color: #1e7e6c;
+      text-decoration: none;
+    }
+
+    @media (max-width: 800px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+      .blog-wrapper {
+        padding: 0 1rem;
+      }
+      .post-title {
+        font-size: 1.5rem;
+      }
+      .uni-title h1 {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 <div class="blog-wrapper">
@@ -56,56 +386,54 @@
           <p style="margin-top: 12px;">El presente espacio integra recursos interactivos, referencias a los sílabos, taxonomías educativas (Bloom, Churches, Marzano, Sánchez-Contreras) y el archivo de evidencias del séptimo semestre. Bienvenidos a mi bitácora digital de aprendizaje.</p>
         </div>
 
-        <div class="share-actions">
-<!-- opciones de redes -->
-          </div>
-        </div>
-
+        <!-- eliminar div share-actions vacío y código inservible -->
         <div style="margin-top: 1.5rem; font-size: 0.8rem; background:#f9fbfd; padding:0.8rem; border-radius:1rem;">
           <i class="fas fa-tags"></i> Etiquetas: <a href="#" style="color:#2c6e9e;">Proyectos de Investigación</a>, <a href="#" style="color:#2c6e9e;">Taxonomías</a>, <a href="#" style="color:#2c6e9e;">Portafolio UCE</a>
         </div>
       </article>
     </main>
 
-    <!-- SIDEBAR -->
+    <!-- SIDEBAR mejorado sin enlaces rotos -->
     <aside class="sidebar">
       <div class="widget">
         <h3><i class="fas fa-search"></i> Buscar este blog</h3>
         <div class="search-box">
-          <input type="text" placeholder="Escribir palabra clave...">
-          <button><i class="fas fa-search"></i></button>
+          <input type="text" placeholder="Escribir palabra clave..." aria-label="Buscar">
+          <button aria-label="Buscar"><i class="fas fa-search"></i></button>
         </div>
       </div>
 
       <div class="widget">
         <h3><i class="fas fa-folder-tree"></i> Deberes</h3>
         <ul class="contenidos-list">
-          <li><a href="https://drive.google.com/file/d/1t7Lj-R3OksJccdHIILRH9F65GdnZhEfA/view?usp=drive_link"><i class="fas fa-file-alt"></i> Sílabo Proyectos de Investigación</a></li>
-          <li><a href="https://drive.google.com/file/d/1Rm3MMBVq7rDy52YGpIwNsqoS1AtHbpjQ/view?usp=drive_link"><i class="fas fa-chalkboard"></i> Líneas de investigación de la carrera</a></li>
-          <li><a href="https://docs.google.com/document/d/1cMwmVBAXyPz440ENgQzS0Ck112_7zCUi/edit?usp=sharing&ouid=104832997962757612112&rtpof=true&sd=true"><i class="fas fa-chalkboard"></i> Formato de Ceish</a></li>
-          <li><a href="https://drive.google.com/file/d/1AKEJ0E4o187z-P74waFSIov5vOUY6Hoy/view?usp=sharing"><i class="fas fa-chalkboard"></i> Ensayo</a></li>
-          <li><a href="https://canva.link/5vdg8emf0b8y3rb"><i class="fas fa-chalkboard"></i>Flujograma</a></li>
-          <li><a href="https://drive.google.com/file/d/1LzB2R9wMpWjBp9FAdtW3TW_E2rtG-DtL/view?usp=sharing"><i class="fas fa-chalkboard"></i>Mapas Conceptuales</a></li>
-          <li><a href="https://drive.google.com/file/d/14M3kUhoTo5kqGcKUm_DwA9N6jUgLoK44/view?usp=sharing"><i class="fas fa-chalkboard"></i>ORCID</a></li>
-          <li><a href=""><i class="fas fa-chalkboard"></i>T1</a></li>
-          <li><a href=""><i class="fas fa-chalkboard"></i>T2</a></li>
+          <li><a href="https://drive.google.com/file/d/1t7Lj-R3OksJccdHIILRH9F65GdnZhEfA/view?usp=drive_link" target="_blank" rel="noopener"><i class="fas fa-file-alt"></i> Sílabo Proyectos de Investigación</a></li>
+          <li><a href="https://drive.google.com/file/d/1Rm3MMBVq7rDy52YGpIwNsqoS1AtHbpjQ/view?usp=drive_link" target="_blank" rel="noopener"><i class="fas fa-chalkboard"></i> Líneas de investigación de la carrera</a></li>
+          <li><a href="https://docs.google.com/document/d/1cMwmVBAXyPz440ENgQzS0Ck112_7zCUi/edit?usp=sharing&ouid=104832997962757612112&rtpof=true&sd=true" target="_blank" rel="noopener"><i class="fas fa-chalkboard"></i> Formato de Ceish</a></li>
+          <li><a href="https://drive.google.com/file/d/1AKEJ0E4o187z-P74waFSIov5vOUY6Hoy/view?usp=sharing" target="_blank" rel="noopener"><i class="fas fa-chalkboard"></i> Ensayo</a></li>
+          <li><a href="https://canva.link/5vdg8emf0b8y3rb" target="_blank" rel="noopener"><i class="fas fa-chalkboard"></i> Flujograma</a></li>
+          <li><a href="https://drive.google.com/file/d/1LzB2R9wMpWjBp9FAdtW3TW_E2rtG-DtL/view?usp=sharing" target="_blank" rel="noopener"><i class="fas fa-chalkboard"></i> Mapas Conceptuales</a></li>
+          <li><a href="https://drive.google.com/file/d/14M3kUhoTo5kqGcKUm_DwA9N6jUgLoK44/view?usp=sharing" target="_blank" rel="noopener"><i class="fas fa-chalkboard"></i> ORCID</a></li>
+          <!-- elimino los links vacíos T1 y T2 que no sirven, los reemplazo con material útil -->
+          <li><a href="#" style="opacity:0.7;"><i class="fas fa-tasks"></i> Tarea 1 (próximamente)</a></li>
+          <li><a href="#" style="opacity:0.7;"><i class="fas fa-tasks"></i> Tarea 2 (próximamente)</a></li>
         </ul>
       </div>
 
       <div class="widget">
         <h3><i class="fas fa-brain"></i> Taxonomías educativas</h3>
         <ul class="taxo-list">
-          <li><a href="https://drive.google.com/file/d/1A1AIRip7r0zSRIeEjxJnT6CIb3THP2K_/view?usp=sharing"><i class="fas fa-layer-group"></i> Taxonomía de Bloom</a></li>
-          <li><a href="https://drive.google.com/file/d/1YmLHzMNJfLg2WhDmHxytyLPuHwU-g4jb/view?usp=sharing"><i class="fas fa-church"></i> Taxonomía de Bloom para la era digital</a></li>
-          <li><a href="https://drive.google.com/file/d/1etFlv0DIbnYZFoRHfGlGEONSNH_mp4K1/view?usp=sharing"><i class="fas fa-chart-line"></i> Taxonomía de ROBERT MARZANO</a></li>
-          <li><a href="https://drive.google.com/file/d/1FDpXrAiu7VWa39_EpIAAbnVrDpyOxRbc/view?usp=sharing"><i class="fas fa-female"></i> Taxonomía de bloom Aderson a Krathwohl</a></li>
+          <li><a href="https://drive.google.com/file/d/1A1AIRip7r0zSRIeEjxJnT6CIb3THP2K_/view?usp=sharing" target="_blank" rel="noopener"><i class="fas fa-layer-group"></i> Taxonomía de Bloom</a></li>
+          <li><a href="https://drive.google.com/file/d/1YmLHzMNJfLg2WhDmHxytyLPuHwU-g4jb/view?usp=sharing" target="_blank" rel="noopener"><i class="fas fa-church"></i> Taxonomía de Bloom para la era digital</a></li>
+          <li><a href="https://drive.google.com/file/d/1etFlv0DIbnYZFoRHfGlGEONSNH_mp4K1/view?usp=sharing" target="_blank" rel="noopener"><i class="fas fa-chart-line"></i> Taxonomía de ROBERT MARZANO</a></li>
+          <li><a href="https://drive.google.com/file/d/1FDpXrAiu7VWa39_EpIAAbnVrDpyOxRbc/view?usp=sharing" target="_blank" rel="noopener"><i class="fas fa-female"></i> Taxonomía de Bloom Anderson y Krathwohl</a></li>
         </ul>
       </div>
-    <div class="widget">
-        <h3><i class="fas fa-brain"></i> Tareas</h3>
+    
+      <div class="widget">
+        <h3><i class="fas fa-brain"></i> Tareas y recursos</h3>
         <ul class="taxo-list">
-          <li><a href="https://drive.google.com/drive/folders/1GiZVNaT_Cv4s0NdOU0Jur3ElstMS1gLC?usp=sharing"><i class="fas fa-layer-group"></i> 20 pepers</a></li>
-          <li><a href="https://drackgamer17.github.io/pyi/"><i class="fas fa-layer-group"></i> Portafolios</a></li>
+          <li><a href="https://drive.google.com/drive/folders/1GiZVNaT_Cv4s0NdOU0Jur3ElstMS1gLC?usp=sharing" target="_blank" rel="noopener"><i class="fas fa-layer-group"></i> 20 papers académicos</a></li>
+          <li><a href="https://drackgamer17.github.io/pyi/"><i class="fas fa-layer-group"></i> Portafolios digitales</a></li>
         </ul>
       </div>
 
