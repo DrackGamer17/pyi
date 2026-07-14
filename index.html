@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Portafolio digital de David Burga - Proyectos de Investigación, UCE. Evidencias, taxonomías y recursos académicos.">
-  <title>Portafolio Digital | David Burga | UCE</title>
+  <title>Explora mi viaje de investigación | David Burga | UCE</title>
   <!-- Google Fonts & Font Awesome 6 -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -16,16 +16,69 @@
     }
 
     body {
-      background: linear-gradient(135deg, #eef2f5 0%, #f7fbff 100%);
+      background:
+        radial-gradient(circle at top left, rgba(30,126,108,0.16), transparent 24%),
+        radial-gradient(circle at top right, rgba(255,179,71,0.2), transparent 26%),
+        linear-gradient(135deg, #eef2f5 0%, #f7fbff 100%);
       font-family: 'Inter', sans-serif;
       color: #1a2c3e;
       line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    .background-orbs {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(10px);
+      opacity: 0.5;
+      animation: float 7s ease-in-out infinite;
+    }
+
+    .orb.one {
+      width: 260px;
+      height: 260px;
+      background: rgba(30,126,108,0.18);
+      top: -50px;
+      left: -60px;
+    }
+
+    .orb.two {
+      width: 220px;
+      height: 220px;
+      background: rgba(255,179,71,0.16);
+      top: 120px;
+      right: -40px;
+      animation-duration: 9s;
+    }
+
+    .orb.three {
+      width: 180px;
+      height: 180px;
+      background: rgba(19,91,122,0.16);
+      bottom: -40px;
+      left: 30%;
+      animation-duration: 8s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) scale(1); }
+      50% { transform: translateY(-16px) scale(1.04); }
     }
 
     .blog-wrapper {
       max-width: 1400px;
       margin: 2rem auto;
       padding: 0 1.5rem;
+      position: relative;
+      z-index: 1;
     }
 
     /* HEADER INSTITUCIONAL */
@@ -36,6 +89,23 @@
       margin-bottom: 2rem;
       box-shadow: 0 15px 30px -12px rgba(0,0,0,0.2);
       color: white;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .main-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.16) 45%, transparent 100%);
+      transform: translateX(-100%);
+      animation: shimmer 6s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes shimmer {
+      100% { transform: translateX(100%); }
     }
 
     .uni-badge {
@@ -84,20 +154,22 @@
       color: white;
       text-decoration: none;
       background: rgba(255,255,255,0.12);
-      padding: 0.5rem 1.2rem;
-      border-radius: 40px;
-      font-weight: 500;
+      padding: 0.6rem 1.15rem;
+      border-radius: 999px;
+      font-weight: 600;
       transition: all 0.2s ease;
       font-size: 0.9rem;
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
     }
 
     .nav-links a:hover {
       background: #ffb347;
       color: #0a2f3f;
       transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(255,179,71,0.18);
     }
 
     /* GRID PRINCIPAL */
@@ -109,16 +181,27 @@
 
     /* POST CARD */
     .post-card {
-      background: white;
+      background: linear-gradient(145deg, #ffffff 0%, #f8fcff 100%);
       border-radius: 1.8rem;
       padding: 2rem;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.06);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid #e8f1f7;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .post-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 0%, rgba(30,126,108,0.05) 40%, transparent 100%);
+      pointer-events: none;
     }
 
     .post-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 14px 28px rgba(0,0,0,0.08);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.08);
     }
 
     .post-meta {
@@ -185,10 +268,24 @@
     .hero-banner {
       background: linear-gradient(135deg, #135b7a 0%, #1e7e6c 100%);
       border-radius: 1.4rem;
-      padding: 1.2rem 1.2rem 1.1rem;
+      padding: 1.25rem 1.25rem 1.1rem;
       color: white;
-      margin-bottom: 1.2rem;
-      box-shadow: 0 10px 24px rgba(19, 91, 122, 0.18);
+      margin-bottom: 1.1rem;
+      box-shadow: 0 12px 28px rgba(19, 91, 122, 0.18);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-banner::after {
+      content: '';
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      background: rgba(255,255,255,0.13);
+      border-radius: 50%;
+      right: -40px;
+      top: -50px;
+      pointer-events: none;
     }
 
     .hero-eyebrow {
@@ -267,6 +364,7 @@
       border: 1px solid #e5eef5;
       border-radius: 1rem;
       padding: 0.9rem;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
     }
 
     .mini-card h3 {
@@ -280,6 +378,26 @@
       color: #5f7f9e;
     }
 
+    .journey-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .journey-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0.45rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      color: #1e7e6c;
+      background: #eef8f6;
+      border: 1px solid #dcefe8;
+      font-weight: 600;
+    }
+
     /* SIDEBAR */
     .sidebar {
       display: flex;
@@ -288,11 +406,21 @@
     }
 
     .widget {
-      background: white;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fcff 100%);
       border-radius: 1.5rem;
       padding: 1.3rem 1.2rem;
-      box-shadow: 0 5px 12px rgba(0,0,0,0.03);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.04);
       border: 1px solid #e9f0f4;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .widget::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent 0%, rgba(30,126,108,0.04) 100%);
+      pointer-events: none;
     }
 
     .widget h3 {
@@ -406,12 +534,14 @@
 
     .footer-blog {
       margin-top: 2.5rem;
-      background: #0f2c36;
+      background: linear-gradient(135deg, #0f2c36 0%, #133d4c 100%);
       color: #cbdbe2;
       text-align: center;
       padding: 1.8rem;
       border-radius: 2rem;
       font-size: 0.75rem;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
     }
     .footer-blog a {
       color: #ffc285;
@@ -440,10 +570,18 @@
       .uni-title h1 {
         font-size: 1rem;
       }
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
+<div class="background-orbs">
+  <div class="orb one"></div>
+  <div class="orb two"></div>
+  <div class="orb three"></div>
+</div>
 <div class="blog-wrapper">
   <!-- header institucional -->
   <header class="main-header">
@@ -475,8 +613,8 @@
 
         <div class="hero-banner">
           <p class="hero-eyebrow"><i class="fas fa-rocket"></i> Bienvenido a mi espacio explorador</p>
-          <h2 class="post-title" style="margin-bottom: 0.4rem;">Mi viaje académico en modo explorer</h2>
-          <p style="font-size: 0.95rem; color: #eff9ff;">Aquí conviven ideas, recursos, evidencias y aprendizajes de forma más dinámica, creativa y cercana.</p>
+          <h2 class="post-title" style="margin-bottom: 0.4rem;">Mi viaje académico, ahora con más energía</h2>
+          <p style="font-size: 0.95rem; color: #eff9ff;">Aquí las ideas, los recursos y las evidencias cobran vida en una experiencia más visual, creativa y cercana.</p>
           <div class="hero-badges">
             <span class="hero-badge"><i class="fas fa-lightbulb"></i> Creatividad</span>
             <span class="hero-badge"><i class="fas fa-compass"></i> Exploración</span>
@@ -502,6 +640,12 @@
             <p>Tu espacio para explorar conocimientos con un toque más vivo.</p>
           </div>
         </div>
+
+        <div class="journey-strip">
+          <span class="journey-chip"><i class="fas fa-star"></i> Investigación activa</span>
+          <span class="journey-chip"><i class="fas fa-chart-line"></i> Aprendizaje dinámico</span>
+          <span class="journey-chip"><i class="fas fa-puzzle-piece"></i> Experiencia interactiva</span>
+        </div>
         
         <div class="info-academica">
           <div class="info-grid">
@@ -518,7 +662,7 @@
           <p style="margin-top: 12px;">El presente espacio integra recursos interactivos, referencias a los sílabos, taxonomías educativas (Bloom, Churches, Marzano, Sánchez-Contreras) y el archivo de evidencias del séptimo semestre. Bienvenidos a mi bitácora digital de aprendizaje.</p>
         </div>
 
-        <div style="margin-top: 1.5rem; font-size: 0.8rem; background:#f9fbfd; padding:0.8rem; border-radius:1rem;">
+        <div style="margin-top: 1.5rem; font-size: 0.8rem; background:#f9fbfd; padding:0.8rem; border-radius:1rem; border:1px solid #e9f0f4;">
           <i class="fas fa-tags"></i> Etiquetas: <a href="#" style="color:#2c6e9e;">Proyectos de Investigación</a>, <a href="#" style="color:#2c6e9e;">Taxonomías</a>, <a href="#" style="color:#2c6e9e;">Portafolio UCE</a>
         </div>
       </article>
