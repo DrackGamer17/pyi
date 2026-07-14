@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyectos de Investigación</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --primary: #0f4c81;
+      --accent: #ffb84d;
+      --text: #213547;
+      --muted: #60788d;
+      --border: #e3eaf2;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #eef4fb 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: var(--card);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, #0a365f 100%);
+      color: white;
+      padding: 32px;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      color: #eaf4ff;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: white;
+      background: rgba(255,255,255,0.14);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      padding: 24px;
+    }
+
+    .card {
+      background: #fcfdff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .card h2 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .mini {
+      background: #f7faff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+    }
+
+    .mini h3 {
+      color: var(--primary);
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .links {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .links a {
+      display: block;
+      text-decoration: none;
+      background: #f4f8fc;
+      color: var(--primary);
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 800px) {
+      .content { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>Proyectos de investigación</h1>
+      <p>Esta página reúne información básica sobre proyectos de investigación, sus etapas y algunos recursos externos útiles para consultar tesis y trabajos académicos.</p>
+      <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="contenidos.html">Contenidos</a>
+        <a href="perfil.html">Perfil</a>
+        <a href="proyecto.html">Proyectos</a>
+      </nav>
+    </header>
+
+    <main class="content">
+      <section>
+        <article class="card">
+          <h2>¿Qué es un proyecto de investigación?</h2>
+          <p>Un proyecto de investigación es un plan estructurado para estudiar un problema, analizar información y encontrar respuestas con base en métodos académicos o científicos.</p>
+        </article>
+
+        <article class="card" style="margin-top: 16px;">
+          <h2>Elementos que suelen incluirse</h2>
+          <div class="grid">
+            <div class="mini">
+              <h3>Planteamiento del problema</h3>
+              <p>Define la situación que se quiere investigar.</p>
+            </div>
+            <div class="mini">
+              <h3>Objetivos</h3>
+              <p>Señalan el propósito del estudio.</p>
+            </div>
+            <div class="mini">
+              <h3>Metodología</h3>
+              <p>Explica cómo se recolectará y analizará la información.</p>
+            </div>
+            <div class="mini">
+              <h3>Resultados</h3>
+              <p>Presentan los hallazgos obtenidos.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <aside>
+        <article class="card">
+          <h2>Recursos externos</h2>
+          <ul class="links">
+            <li><a href="https://repositorio.unal.edu.co/" target="_blank" rel="noopener noreferrer">Repositorio Universidad Nacional de Colombia</a></li>
+            <li><a href="https://repositorio.uchile.cl/" target="_blank" rel="noopener noreferrer">Repositorio Universidad de Chile</a></li>
+            <li><a href="https://oa.upm.es/" target="_blank" rel="noopener noreferrer">Repositorio Universidad Politécnica de Madrid</a></li>
+            <li><a href="https://repositorio.uc.cl/" target="_blank" rel="noopener noreferrer">Repositorio Pontificia Universidad Católica de Chile</a></li>
+          </ul>
+        </article>
+      </aside>
+    </main>
+  </div>
+</body>
+</html>
