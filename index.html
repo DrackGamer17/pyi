@@ -365,6 +365,13 @@
       border-radius: 1rem;
       padding: 0.9rem;
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .mini-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(19, 91, 122, 0.08);
+      border-color: #b8ddec;
     }
 
     .mini-card h3 {
@@ -376,6 +383,55 @@
     .mini-card p {
       font-size: 0.82rem;
       color: #5f7f9e;
+    }
+
+    .quest-board {
+      display: grid;
+      grid-template-columns: 1.2fr 0.9fr 0.9fr;
+      gap: 0.8rem;
+      margin: 1rem 0 1.2rem;
+    }
+
+    .quest-card {
+      background: linear-gradient(145deg, #ffffff 0%, #f7fbff 100%);
+      border: 1px solid #e5eef5;
+      border-radius: 1rem;
+      padding: 0.95rem;
+      box-shadow: 0 8px 16px rgba(19, 91, 122, 0.06);
+    }
+
+    .quest-card.featured {
+      background: linear-gradient(135deg, #135b7a 0%, #1e7e6c 100%);
+      color: white;
+    }
+
+    .quest-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .quest-card p {
+      font-size: 0.82rem;
+      color: #56748b;
+      line-height: 1.45;
+    }
+
+    .quest-card.featured p {
+      color: #ebf9f3;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
 
     .journey-strip {
@@ -573,6 +629,9 @@
       .mini-grid {
         grid-template-columns: 1fr;
       }
+      .quest-board {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -638,6 +697,22 @@
           <div class="mini-card">
             <h3><i class="fas fa-globe"></i> Comparte</h3>
             <p>Tu espacio para explorar conocimientos con un toque más vivo.</p>
+          </div>
+        </div>
+
+        <div class="quest-board">
+          <div class="quest-card featured">
+            <div class="status-pill"><i class="fas fa-trophy"></i> Misión actual</div>
+            <h3>Explorar el conocimiento</h3>
+            <p>Recorrer recursos, evidencias y proyectos con una mirada curiosa, creativa y activa.</p>
+          </div>
+          <div class="quest-card">
+            <h3><i class="fas fa-map"></i> Ruta del viaje</h3>
+            <p>Proyectos · Contenidos · Recursos · Reflexiones</p>
+          </div>
+          <div class="quest-card">
+            <h3><i class="fas fa-award"></i> Nivel actual</h3>
+            <p>Aprendiz en desarrollo · pensamiento crítico activo</p>
           </div>
         </div>
 
